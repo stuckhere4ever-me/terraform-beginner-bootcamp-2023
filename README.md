@@ -22,3 +22,22 @@ The general format will be **MAJOR.MINOR.PATCH**, eg `1.0.1`
 1. Had to adjust permissions
 1. Adjusted .gitpod.yml to utilize the running script and adjusted to use begin rather than init since init only runs on initial startup
 
+
+
+## ENV Video
+some information that we need to know:
+- `env` is a command that will let you view all enviornment variables
+- `env | grep GITPOD` will give us information on all variables that contain the string GITPOD in them
+- the `|` is a pipe command.  It will pass the output generated from the command on its left to the command on the right
+- to print a specific `env variable `echo $<variable name>`
+- can set using `export $HELLO='world'`
+- can unset using `unset HELLO`
+- we can print an envar using `echo $HELLO`
+
+When you open new terminals in VSCode then it will not know about other terminals var.
+If you want to set then globally then you need to use bash profiles
+We can persist env vars in gitpod secret storage
+
+`gp env HELLO='world'`
+
+Then all future terminals will have $HELLO = 'world'
