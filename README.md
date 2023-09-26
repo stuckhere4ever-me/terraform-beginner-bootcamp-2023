@@ -111,3 +111,25 @@ Found information on Terraform Cloud Enviornment Variables here:
 
 I set Default Region Access Key ID and Secret Access Key as sensitive so they can not be seen and after that it worked!
 
+## generate_tf_cloud_login bash script
+
+Created a bash script to generate the terraform cloud login. It creates a json file that contains both credentials and orginization and places it in the /home/gitpod/.terraform.d directory
+
+the format of the file is as follows:
+
+```json
+{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "F2aaIh5eOhAYcc.atlasv1.7775NOPEzo82qN88elI0qgbcyu3Jr0N4rluUqzIHEgsNf5uRxPfJ7DiV3QzwEXoNOPE"
+    }
+  }
+}
+```
+Updated gitpod yaml file with the following:
+
+```yaml
+- name: tfCloud
+    before: |
+      source ./bin/generate_tf_cloud_login
+```
