@@ -86,3 +86,8 @@ Important Website!
 - git ignore allows us to ignore particular things as part of the sync (the terraform directrory in this case)
 - `terraform plan` will give us the list of things that will get done
 - `terraform apply` will execute commands --auto-approve will allow the changes to be made without prompt
+
+- [AWS Terraform information] https://registry.terraform.io/providers/hashicorp/aws/latest
+- `terraform destroy` will destroy resources that have been created within the runtime
+- Can use auto-approve
+- 
