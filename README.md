@@ -90,4 +90,24 @@ Important Website!
 - [AWS Terraform information] https://registry.terraform.io/providers/hashicorp/aws/latest
 - `terraform destroy` will destroy resources that have been created within the runtime
 - Can use auto-approve
-- 
+
+
+## AWS Login issue
+
+Note - `aws sts get-caller-identity` works locally
+To Test I will simply run plan
+state is stored locally
+In this test - the statefile is created locally and no issues occur
+I will run an apply to ensure the s3 bucket is created
+S3 bucket has been created
+Next I will generate terraform cloud login credentials
+Doing an init will successfully migrate the state to terraform cloud but then it appears to no longer use my credentials
+
+I am wondering ... is there a place I can store credentials on TF cloud? 
+Or maybe I will have to use a shared file?  But then it will need to be created by hand
+
+Found information on Terraform Cloud Enviornment Variables here:
+[Terraform Cloud Variables](https://developer.hashicorp.com/terraform/cloud-docs/workspaces/variables)
+
+I set Default Region Access Key ID and Secret Access Key as sensitive so they can not be seen and after that it worked!
+
