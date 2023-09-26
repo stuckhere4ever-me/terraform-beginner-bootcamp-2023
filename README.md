@@ -71,3 +71,18 @@ use gp env to set these for all GP enviornments:
 `gp env AWS_DEFAULT_REGION='us-east-1'`
 
 
+## 9/26
+
+Important Website!
+[Terraform Registry](https://registry.terraform.io/)
+
+- Providers is how you map between an API and Terraform.  Example AWS API to be used within Terraform
+- Module is a template for providing common actions.  Makes it easier to move stuff around
+- [Hashicorp Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs)
+
+- Running Terraform init will start the project together
+- It creates a terraform lock that holds the providers and hashes
+- Also we create a terraform directory that will download the modules associated
+- git ignore allows us to ignore particular things as part of the sync (the terraform directrory in this case)
+- `terraform plan` will give us the list of things that will get done
+- `terraform apply` will execute commands --auto-approve will allow the changes to be made without prompt
