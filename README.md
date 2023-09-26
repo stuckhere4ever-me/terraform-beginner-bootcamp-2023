@@ -41,3 +41,33 @@ We can persist env vars in gitpod secret storage
 `gp env HELLO='world'`
 
 Then all future terminals will have $HELLO = 'world'
+
+
+### AWS CLI Refactor
+
+- AWS CLI is now installed via bash script `install_aws_cli`
+- Uppdated the env variable to be the correct $PROJECT_ROOT
+
+We can check if our AWS Credentials are configured correctly by running the command `aws sts get-caller-identity`
+
+[AWS CLI ENV VARS](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
+DO NOT PUT YOUR ACCESS KEYS INTO A FILE IN THE REPO!! THEY WILL GET LEAKED AND YOU WILL PAY LOTS OF MONEY!!
+
+#### Testing AWS CLI
+You can test the AWS CLI by using the export command and setting the following three variables:
+
+```sh
+AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+AWS_DEFAULT_REGION=us-east-1
+```
+
+#### Setting varialbes in GITPOD
+use gp env to set these for all GP enviornments:
+
+`gp env AWS_ACCESS_KEY_ID='AKIAIOSFODNN7EXAMPLE'`
+`gp env AWS_SECRET_ACCESS_KEY='wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'`
+`gp env AWS_DEFAULT_REGION='us-east-1'`
+
+
