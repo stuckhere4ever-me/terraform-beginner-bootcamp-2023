@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Check if TOKEN and ORG environment variables are set
+if [[ -z "$TOKEN" || -z "$ORG" ]]; then
+  echo "ERROR: Please set the TOKEN and ORG environment variables."
+  exit 1
+fi
+
+# Define the credentials file content
+credentials_json="{\"credentials\":{\"app.terraform.io\":{\"token\":\"$TOKEN\"}},\"current_organization\":\"$ORG\"}"
+
+# Write the content to the credentials.tfrc.json file
+echo "$credentials_json" > credentials.tfrc.json
+
+echo "Credentials file 'credentials.tfrc.json' created successfully."
