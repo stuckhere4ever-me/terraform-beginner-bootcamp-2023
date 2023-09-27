@@ -152,4 +152,5 @@ Changed .gitpod.yml to include the following:
 `echo 'alias tf=terraform' >>~/.bash_profile`
 
 Also updated gitpod.yml so that terraform cloud ssh key is run as part of the terraform command set
-
+Added line to bash profile script to ensure it got rerun:
+`source ~/.bash_profile`
