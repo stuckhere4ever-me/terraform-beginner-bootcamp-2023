@@ -133,3 +133,24 @@ Updated gitpod yaml file with the following:
     before: |
       source ./bin/generate_tf_cloud_login
 ```
+#### ADDED tf alias for terraform
+Found information in stack overflow [Alias information](https://stackoverflow.com/questions/8967843/how-do-i-create-a-bash-alias)
+
+Added the following line into ~/.bash_profile:
+`alias tf=terraform`
+
+Now we can run terraform commands by typing tf instead
+Tested with tf init
+
+But ... there is a problem! .bash_profile will not be updated on startup, so I will need to put something into gitpod.yml.
+Should I write a script ... or maybe i can just use append.  Time to go look! 
+
+Found append information in super user:
+[Append information](https://superuser.com/questions/678113/how-to-add-a-line-to-bash-profile)
+
+Changed .gitpod.yml to include the following:
+`echo 'alias tf=terraform' >>~/.bash_profile`
+
+Also updated gitpod.yml so that terraform cloud ssh key is run as part of the terraform command set
+Added line to bash profile script to ensure it got rerun:
+`source ~/.bash_profile`
