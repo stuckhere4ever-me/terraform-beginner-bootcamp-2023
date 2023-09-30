@@ -1,6 +1,20 @@
 # Terraform Beginner Bootcamp 2023
-## Semantic Versioning :mage:
 
+
+## Table of Contents
+- [Semantic Versioning](#semantic-versioning-mage)
+- [Changes 9/25](#document-changes-925)
+- [ENV Video](#env-video)
+- [AWS CLI Refactor](#aws-cli-refactor)
+  - [Testing AWS CLI](#testing-aws-cli)
+  - [Setting up ENV in GitPod](#setting-varialbes-in-gitpod)
+- [9/26](#926)
+- [AWS Login Issue](#aws-login-issue)
+- [TF Cloud Login Script](#generate_tf_cloud_login-bash-script)
+  - [TF Alias Setup](#added-tf-alias-for-terraform)
+
+
+## Semantic Versioning :mage:
 This project will use Semantic Versioning for its tagging
 
 ![semver.org](https://semver.org/)
@@ -43,7 +57,7 @@ We can persist env vars in gitpod secret storage
 Then all future terminals will have $HELLO = 'world'
 
 
-### AWS CLI Refactor
+## AWS CLI Refactor
 
 - AWS CLI is now installed via bash script `install_aws_cli`
 - Uppdated the env variable to be the correct $PROJECT_ROOT
@@ -54,7 +68,7 @@ We can check if our AWS Credentials are configured correctly by running the comm
 
 DO NOT PUT YOUR ACCESS KEYS INTO A FILE IN THE REPO!! THEY WILL GET LEAKED AND YOU WILL PAY LOTS OF MONEY!!
 
-#### Testing AWS CLI
+### Testing AWS CLI
 You can test the AWS CLI by using the export command and setting the following three variables:
 
 ```sh
@@ -63,7 +77,7 @@ AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 AWS_DEFAULT_REGION=us-east-1
 ```
 
-#### Setting varialbes in GITPOD
+### Setting varialbes in GITPOD
 use gp env to set these for all GP enviornments:
 
 `gp env AWS_ACCESS_KEY_ID='AKIAIOSFODNN7EXAMPLE'`
@@ -133,7 +147,7 @@ Updated gitpod yaml file with the following:
     before: |
       source ./bin/generate_tf_cloud_login
 ```
-#### ADDED tf alias for terraform
+### ADDED tf alias for terraform
 Found information in stack overflow [Alias information](https://stackoverflow.com/questions/8967843/how-do-i-create-a-bash-alias)
 
 Added the following line into ~/.bash_profile:
