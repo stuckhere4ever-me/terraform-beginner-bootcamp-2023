@@ -71,6 +71,17 @@ The code is as follows:
 ```  - name: aws-clicp $PROJECT_ROOT/terraform.tfvars.example $PROJECT_ROOT/terraform.tfvars```
 
 
+### var-file flag
+TODO for Homework!
+
+### auto-tfvars
+TODO: Document functionality
+
+### order of terraform varialbes
+TODO: Gather information
+
+[Terraform Input Variables](https://developer.hashicorp.com/terraform/language/values/variables)
+
 ### Terraform Cloud variables
 There are two types of variables in terraform cloud.  They are either enviornment variables or terraform variables.
 Enviornment variables are available across the deployment and are generally things that will stay the same long term
