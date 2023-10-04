@@ -6,7 +6,8 @@ tasks:
       echo '' >>~/.bash_profile
       echo 'alias tf=terraform # Add Alias for Terraform' >>~/.bash_profile
       source ~/.bash_profile
-  - name: aws-cli
+      
+  - name: aws-clicp $PROJECT_ROOT/terraform.tfvars.example $PROJECT_ROOT/terraform.tfvars
     env:
       AWS_CLI_AUTO_PROMPT: on-partial
     before: |
