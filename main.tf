@@ -1,35 +1,3 @@
-terraform {
-  required_providers {
-    random = {
-      source = "hashicorp/random"
-      version = "3.5.1"
-    }
-
-    aws = {
-      source = "hashicorp/aws"
-      version = "5.17.0"
-    }
-  }
-
-  cloud {
-    organization = "Raza"
-
-    workspaces {
-      name = "terra-house-1"
-    }
-  }
-
-
-}
-
-provider "aws" {
-  # Configuration options
-}
-
-provider "random" {
-  # Configuration options
-}
-
 
 resource "random_string" "bucketname" {
   # Bucket Naming Rules
@@ -43,13 +11,11 @@ resource "random_string" "bucketname" {
   upper            = false
 }
 
-resource "aws_s3_bucket" "example" {
+ resource "aws_s3_bucket" "example" {
   bucket = random_string.bucketname.result
+  tags = {
+    UserUuid = var.user_uuid
 
   }
- 
 
-output "random_bucket_name" {
-  value       = random_string.bucketname.result
-}
-
+  }
