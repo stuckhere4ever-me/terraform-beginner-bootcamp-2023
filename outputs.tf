@@ -1,3 +1,3 @@
-output "random_bucket_name" {
-  value       = random_string.bucketname.result
+output "bucket_name" {
+  value       = var.bucket_name
 }
