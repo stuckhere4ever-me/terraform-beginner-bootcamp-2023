@@ -1,3 +1,4 @@
-output "bucket_name" {
-  value       = var.bucket_name
+output "bucketname" {
+ description = "BucketName for our static bucket"
+ value = module.terrahouse_aws.bucket_name 
 }
